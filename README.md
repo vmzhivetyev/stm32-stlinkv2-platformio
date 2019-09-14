@@ -19,6 +19,7 @@ In fact it's not a MacOS-only guide.
     board = genericSTM32F103C8
     framework = arduino
     upload_protocol = stlink
+    debug_tool = stlink
     ```
 1. Set both BOOT jumpers of STM32 to zero.
 1. Connect ST-LINK V2 to your mac
