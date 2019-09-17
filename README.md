@@ -45,7 +45,7 @@ In fact it's not a MacOS-only guide.
     ```
     openocd -d2 -s /Users/viacheslav/.platformio/packages/tool-openocd/scripts -f interface/stlink.cfg -c "transport select hla_swd" -f target/stm32f1x.cfg -c "program {.pio/build/genericSTM32F103C8/firmware.elf}  verify reset; shutdown;"
     ```
-   In the line above you can see the path to opencd’s scripts folder and the subpath for the config file used.
+   In the line above you can see the path to opencd’s scripts folder and the subpath (target/stm32f1x.cfg) for the config file used.
    Open the config file and replace the `0x1ba01477` with `0x2ba01477`.
 1. Run upload again.
 1. ??????
