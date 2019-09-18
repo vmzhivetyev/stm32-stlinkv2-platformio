@@ -12,15 +12,16 @@ In fact it's not a MacOS-only guide.
 # Steps
 1. Open MacOS terminal: `brew install stlink` (Don't know if this step really even matters 😅)
 1. Create a project in PlatformIO
-1. PlatformIO.ini contents:
+1. **platformIO.ini** contents:
     ```cfg
-    [env:genericSTM32F103C8]
+    [env:mycustomconfig]
     platform = ststm32
     board = genericSTM32F103C8
     framework = arduino
     upload_protocol = stlink
     debug_tool = stlink
     ```
+    **This config enables you to use maple core libs.**
 1. Set both BOOT jumpers of STM32 to zero.
 1. Connect ST-LINK V2 to your mac
 1. Click upload in PlatformIO
