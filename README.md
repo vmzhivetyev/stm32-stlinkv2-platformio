@@ -50,3 +50,5 @@ In fact it's not a MacOS-only guide.
 1. Run upload again.
 1. ??????
 1. Profit
+
+### Let me know if it helped you - star the repo!
