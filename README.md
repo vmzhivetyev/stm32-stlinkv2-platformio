@@ -42,7 +42,7 @@ https://community.platformio.org/t/difficulty-with-getting-usb-serial-usb-cdc-wo
         -D HAL_PCD_MODULE_ENABLED
     ```
     
-    > Last line solves error:
+    > `upload_flags = -c set CPUTAPID 0x2ba01477` solves error:
     ```
     Warn : UNEXPECTED idcode: 0x2ba01477
     Error: expected 1 of 1: 0x1ba01477
