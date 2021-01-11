@@ -19,7 +19,9 @@ In fact it's not a MacOS-only guide.
     [env:bluepill_f103c8]
     platform = ststm32
     framework = arduino
-    board = genericSTM32F103C8
+    board = genericSTM32F103C8 # or bluepill_f103c8
+    board_build.core = maple
+
     upload_protocol = stlink
     debug_tool = stlink
     upload_flags = -c set CPUTAPID 0x2ba01477
