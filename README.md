@@ -11,13 +11,6 @@ In fact it's not a MacOS-only guide.
 
 > STLink drivers: https://my.st.com/content/my_st_com/en/products/development-tools/software-development-tools/stm32-software-development-tools/stm32-utilities/stsw-link009.license=1610368232807.product=STSW-LINK009.version=2.0.1.html
 
-# How to get USB Serial working?
-
-https://community.platformio.org/t/difficulty-with-getting-usb-serial-usb-cdc-working/7501/6
-
-> STM32 Virtual COM Port Driver: https://my.st.com/content/my_st_com/en/products/development-tools/software-development-tools/stm32-software-development-tools/stm32-utilities/stsw-stm32102.license=1610355488152.product=STSW-STM32102.version=1.5.0.html#get-software
-
-
 # Steps
 1. Open MacOS terminal: `brew install stlink` (Don't know if this step really even matters 😅)
 1. Create a project in PlatformIO
@@ -51,5 +44,36 @@ https://community.platformio.org/t/difficulty-with-getting-usb-serial-usb-cdc-wo
 1. Connect ST-LINK V2 to your mac
 1. Click upload in PlatformIO
 1. Profit
+
+# How to get USB Serial working?
+
+The platfromio.ini uphere is correct as to:
+https://community.platformio.org/t/difficulty-with-getting-usb-serial-usb-cdc-working/7501/6
+
+### Install COM Port driver:
+> STM32 Virtual COM Port Driver: https://my.st.com/content/my_st_com/en/products/development-tools/software-development-tools/stm32-software-development-tools/stm32-utilities/stsw-stm32102.license=1610355488152.product=STSW-STM32102.version=1.5.0.html#get-software
+
+```C++
+#include <Arduino.h>
+
+int8_t led = 0;
+
+void setup() {
+  SerialUSB.begin(115200);
+  pinMode(LED_BUILTIN, OUTPUT);
+}
+
+void loop() {
+  if(SerialUSB.available()) {
+    char c = SerialUSB.read();
+    SerialUSB.print("hello ");
+    SerialUSB.print(c);
+    SerialUSB.println();
+  }
+  led = ~ led & 1;
+  digitalWrite(LED_BUILTIN, led);
+  delay(100);
+}
+```
 
 ### Let me know if it helped you - star the repo!
