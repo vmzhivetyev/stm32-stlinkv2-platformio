@@ -9,7 +9,9 @@ In fact it's not a MacOS-only guide.
 * Hands
 * VSCode with PlatformIO
 
-> Windows drivers: https://my.st.com/content/my_st_com/en/products/development-tools/software-development-tools/stm32-software-development-tools/stm32-utilities/stsw-link009.license=1610368232807.product=STSW-LINK009.version=2.0.1.html
+> STLink drivers: https://my.st.com/content/my_st_com/en/products/development-tools/software-development-tools/stm32-software-development-tools/stm32-utilities/stsw-link009.license=1610368232807.product=STSW-LINK009.version=2.0.1.html
+
+> STM32 Virtual COM Port Driver: https://my.st.com/content/my_st_com/en/products/development-tools/software-development-tools/stm32-software-development-tools/stm32-utilities/stsw-stm32102.license=1610355488152.product=STSW-STM32102.version=1.5.0.html#get-software
 
 # Steps
 1. Open MacOS terminal: `brew install stlink` (Don't know if this step really even matters 😅)
