@@ -76,4 +76,4 @@ void loop() {
 }
 ```
 
-### Let me know if it helped you - star the repo!
+### 🙌 Let me know if something were helpful - star the repo!
