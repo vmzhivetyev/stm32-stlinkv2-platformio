@@ -20,7 +20,7 @@ In fact it's not a MacOS-only guide.
     platform = ststm32
     framework = arduino
     board = genericSTM32F103C8 # or bluepill_f103c8
-    board_build.core = maple
+    board_build.core = maple # this line is not required anymore
 
     upload_protocol = stlink
     debug_tool = stlink
@@ -47,7 +47,7 @@ In fact it's not a MacOS-only guide.
 1. Click upload in PlatformIO
 1. Profit
 
-# How to get USB Serial working?
+# How to get Serial via USB working?
 
 The platfromio.ini uphere is correct as to:
 https://community.platformio.org/t/difficulty-with-getting-usb-serial-usb-cdc-working/7501/6
@@ -61,18 +61,20 @@ https://community.platformio.org/t/difficulty-with-getting-usb-serial-usb-cdc-wo
 int8_t led = 0;
 
 void setup() {
-  SerialUSB.begin(115200);
+  // SerialUSB.begin(115200);
+  // SerialUSB was renamed to Serial in recent Arduino_STM32 core releases.
+  Serial.begin(115200);
   pinMode(LED_BUILTIN, OUTPUT);
 }
 
 void loop() {
-  if(SerialUSB.available()) {
+  if(Serial.available()) {
     char c = SerialUSB.read();
-    SerialUSB.print("hello ");
-    SerialUSB.print(c);
-    SerialUSB.println();
+    Serial.print("hello ");
+    Serial.print(c);
+    Serial.println();
   }
-  led = ~ led & 1;
+  led ^= 1;
   digitalWrite(LED_BUILTIN, led);
   delay(100);
 }
