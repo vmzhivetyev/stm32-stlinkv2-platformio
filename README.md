@@ -69,7 +69,7 @@ void setup() {
 
 void loop() {
   if(Serial.available()) {
-    char c = SerialUSB.read();
+    char c = Serial.read();
     Serial.print("hello ");
     Serial.print(c);
     Serial.println();
